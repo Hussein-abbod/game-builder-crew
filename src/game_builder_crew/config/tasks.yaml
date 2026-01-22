@@ -1,0 +1,72 @@
+design_task:
+  description: >
+    Analyze the user's rough game idea:
+    
+    "{game}"
+    
+    Expand this into a detailed Technical Game Design Document to be handed off to a Senior Engineer.
+    
+    1. Define the objective and rules.
+    2. List necessary classes (Player, Enemy, etc.).
+    3. Define controls (e.g., Arrow keys, Space bar).
+    4. Specify Pygame as the library.
+    5. Ensure the scope is manageable for a single script.
+    
+    Your output MUST be clear and structured so the Engineer can implement it without questions.
+  expected_output: >
+    A detailed technical specification for the Senior Engineer to follow.
+
+code_task:
+  description: >
+    You are the Senior Software Engineer.
+    
+    Instructions
+    ------------
+    1. READ the Technical Design Document provided by the Senior Game Designer (from the previous task).
+    2. Write the COMPLETE Python code based EXACTLY on those specifications.
+    3. Do not add features not in the design.
+    4. Do not miss features in the design.
+  expected_output: >
+    Your Final answer must be the full python code, only the python code and nothing else.
+
+review_task:
+  description: >
+    You are the QA Engineer.
+    
+    Instructions
+    ------------
+    1. Review the Code provided by the Senior Engineer.
+    2. Compare it strictly against the Technical Design Document provided by the Game Designer.
+    3. **CRITICAL VALIDATION CHECKLIST** (You MUST check ALL of these):
+       a) **Syntax Validation**: Read through EVERY line and verify Python syntax is correct
+       b) **Variable Definitions**: Verify EVERY variable/constant used is actually defined
+       c) **Typos**: Check for typos in variable names (e.g., SPEED_INCREASE_INCREASE_AMOUNT vs SPEED_INCREASE_AMOUNT)
+       d) **Imports**: Verify all necessary imports are present at the top
+       e) **Logic Errors**: Check that the logic matches the design document
+       f) **Missing Features**: Ensure no design requirements are missing
+       g) **Indentation**: Verify proper Python indentation throughout
+    4. **BEFORE returning the code**, mentally trace through the execution to catch runtime errors.
+    5. If you find ANY errors, fix them yourself and return the corrected version.
+    6. DO NOT approve code with undefined variables, typos, or syntax errors.
+  expected_output: >
+    Your Final answer must be the full python code, only the python code and nothing else.
+
+evaluate_task:
+  description: >
+    You are the Chief QA Engineer.
+    
+    Instructions
+    ------------
+    1. Review the final code from the QA Engineer.
+    2. Ensure it still meets the original User Vision and Design Document.
+    3. **FINAL VERIFICATION CHECKLIST** (Your last chance to catch bugs):
+       a) **Run a Mental Execution**: Think like a Python interpreter - trace through the code line by line
+       b) **Constant Verification**: Check that EVERY constant referenced (e.g., SCREEN_WIDTH, SPEED_INCREASE_AMOUNT) is defined
+       c) **Variable Name Consistency**: Look for typos like doubled words (e.g., INCREASE_INCREASE instead of INCREASE)
+       d) **Import Completeness**: Verify all modules used are imported
+       e) **Syntax Final Check**: One last scan for syntax errors, missing colons, mismatched parentheses
+       f) **Deployment Readiness**: Confirm the code can run without crashing immediately
+    4. If you find ANY bugs (even small typos), fix them before returning.
+    5. Think like a compiler - catch errors BEFORE the user runs the code.
+  expected_output: >
+    Your Final answer must be the full python code, only the python code and nothing else.

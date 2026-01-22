@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*.class
+.env
+.DS_Store
+.vs/
+.vscode/
+*.slnx.sqlite
+*.suo
+.gradio/
+.venv/
+env/
+venv/
